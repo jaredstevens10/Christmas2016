@@ -29,8 +29,8 @@ extension SKNode {
             case "1":
                 
                 print("unarchive, level 1 selected")
-                CandyCount = 1
-                FriendsCount = 3
+                CandyCount = 5
+                FriendsCount = 5
                 ParentsCount = 2
                 
               //  FriendsCount = 0
@@ -513,7 +513,7 @@ class GameViewController: UIViewController {
 
     }
     
-    func CreateRadarMap(_ notification:Notification) {
+    @objc func CreateRadarMap(_ notification:Notification) {
         
         print("Creating Game Radar")
         
@@ -557,7 +557,7 @@ class GameViewController: UIViewController {
         
     }
     
-    func UpdateParentSpeed(_ notification:Notification) {
+    @objc func UpdateParentSpeed(_ notification:Notification) {
         
         let userInfo:Dictionary<String,String?> = (notification as NSNotification).userInfo as! Dictionary<String,String?>
         
@@ -598,7 +598,7 @@ class GameViewController: UIViewController {
         
     }
     
-    func LevelClose(_ notification:Notification) {
+    @objc func LevelClose(_ notification:Notification) {
         
         let userInfo:Dictionary<String,String?> = (notification as NSNotification).userInfo as! Dictionary<String,String?>
         
@@ -632,7 +632,7 @@ class GameViewController: UIViewController {
     }
     
     
-    func UpdateCandyViews(_ notification:Notification) {
+    @objc func UpdateCandyViews(_ notification:Notification) {
         
         print("Should receive notification")
         
@@ -708,7 +708,7 @@ class GameViewController: UIViewController {
     }
     
     
-    func HideCandy(_ notification:Notification) {
+    @objc func HideCandy(_ notification:Notification) {
         
         print("Should receive hide candy notification")
 
@@ -781,7 +781,7 @@ class GameViewController: UIViewController {
         }
     }
     
-    func GameMessage(_ notification:Notification) {
+    @objc func GameMessage(_ notification:Notification) {
         
         var MyName = String()
         
@@ -886,7 +886,7 @@ class GameViewController: UIViewController {
     }
     
     
-    func FriendContact(_ notification:Notification) {
+    @objc func FriendContact(_ notification:Notification) {
   
         
         let userInfo:Dictionary<String,String?> = (notification as NSNotification).userInfo as! Dictionary<String,String?>

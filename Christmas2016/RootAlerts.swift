@@ -32,7 +32,7 @@ extension Alerts where Self: SKScene {
         
         let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
             
-            if let url = NSURL(string: UIApplicationOpenSettingsURLString) {
+            if let url = NSURL(string: UIApplication.openSettingsURLString) {
                 UIApplication.shared.openURL(url as URL)
             }
         }

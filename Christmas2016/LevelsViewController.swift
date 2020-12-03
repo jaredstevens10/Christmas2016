@@ -62,11 +62,15 @@ class LevelsViewController: UIViewController, UICollectionViewDelegateFlowLayout
                 
                 case "piper":
                 
+                    
                     if prefs.value(forKey: "piperHighestLevelComplete") == nil {
                         HighestLevelTemp = "0"
+                        //HighestLevelTemp = "49"
                     } else {
                         HighestLevelTemp = prefs.value(forKey: "piperHighestLevelComplete") as! String
                 }
+ 
+                //HighestLevelTemp = "49"
                 
                 case "tripp":
                 
@@ -74,20 +78,27 @@ class LevelsViewController: UIViewController, UICollectionViewDelegateFlowLayout
                         
                         print("HIGHEST LEVEL COMPLETE IS NIL")
                         HighestLevelTemp = "0"
+                        //HighestLevelTemp = "49"
                     } else {
                         HighestLevelTemp = prefs.value(forKey: "trippHighestLevelComplete") as! String
-                }
+                    }
+ 
+                //HighestLevelTemp = "49"
                 
                 
                 case "mom":
                 
+                    
                     if prefs.value(forKey: "trippHighestLevelComplete") == nil {
                         
                         print("HIGHEST LEVEL COMPLETE IS NIL")
                         HighestLevelTemp = "0"
+                        //HighestLevelTemp = "49"
                     } else {
                         HighestLevelTemp = prefs.value(forKey: "trippHighestLevelComplete") as! String
-                }
+                     }
+ 
+                //HighestLevelTemp = "49"
                 
             default:
                 //break
@@ -258,7 +269,7 @@ class LevelsViewController: UIViewController, UICollectionViewDelegateFlowLayout
         })
     }
     
-    func LevelCloseUpdate(_ notification:Notification) {
+    @objc func LevelCloseUpdate(_ notification:Notification) {
         
         let userInfo:Dictionary<String,String?> = (notification as NSNotification).userInfo as! Dictionary<String,String?>
         
@@ -487,7 +498,7 @@ class LevelsViewController: UIViewController, UICollectionViewDelegateFlowLayout
     
 
     
-    func SelectLevelClicked(_ sender: UIButton!) {
+    @objc func SelectLevelClicked(_ sender: UIButton!) {
         
         
         print("Select Level Clicked")

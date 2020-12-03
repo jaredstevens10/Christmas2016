@@ -581,7 +581,7 @@ class LevelHome: SKScene, SKPhysicsContactDelegate, Alerts {
         
     }
     
-    func ParentCanTouchPlayer (_ notification:Notification) {
+    @objc func ParentCanTouchPlayer (_ notification:Notification) {
         
         for child in self.children {
             
@@ -593,7 +593,7 @@ class LevelHome: SKScene, SKPhysicsContactDelegate, Alerts {
       //  parent.userData?.setValue(true, forKey: "parentCanTouchPlayer")
     }
     
-    func TellOnPlayer (_ notification:Notification) {
+    @objc func TellOnPlayer (_ notification:Notification) {
         
         AvoidContact = false
         
@@ -634,7 +634,7 @@ class LevelHome: SKScene, SKPhysicsContactDelegate, Alerts {
         
     }
     
-    func GenerateCandy (_ notification:Notification) {
+    @objc func GenerateCandy (_ notification:Notification) {
         
         AvoidContact = false
         
@@ -1373,7 +1373,7 @@ class LevelHome: SKScene, SKPhysicsContactDelegate, Alerts {
         
     }
     
-    func PauseGame (_ notification:Notification) {
+    @objc func PauseGame (_ notification:Notification) {
         
         AvoidContact = false
         

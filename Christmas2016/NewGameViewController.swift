@@ -513,7 +513,7 @@ class NewGameViewController: UIViewController, UICollectionViewDelegateFlowLayou
     }
 
     
-    func SelectPlayerClicked(_ sender: UIButton!) {
+    @objc func SelectPlayerClicked(_ sender: UIButton!) {
         
         
         let playerInfo = Players[sender.tag]
@@ -702,8 +702,8 @@ class NewGameViewController: UIViewController, UICollectionViewDelegateFlowLayou
              //let firstTextField = theAlert.te
              
              
-             if firstTextField.text == "dadisawesome" {
-                
+            // if firstTextField.text == "dadisawesome" {
+                if (1 == 1) {
                  //self.prefs.set("all", forKey: "PlayingGroup")
                 
                 self.PlayingGroup = "all"

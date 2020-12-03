@@ -80,7 +80,7 @@ class EnabledFriendsViewController: UIViewController, UICollectionViewDelegateFl
         return Packs.count
     }
     
-    func SelectFriendSwitchClicked(_ sender: UISwitch!) {
+    @objc func SelectFriendSwitchClicked(_ sender: UISwitch!) {
         
         
         print("Switch tapped")
@@ -136,9 +136,9 @@ class EnabledFriendsViewController: UIViewController, UICollectionViewDelegateFl
                     //let firstTextField = theAlert.te
                     
                     
-                    if firstTextField.text == "\(packID)code" {
-                        //if firstTextField.text != "" {
-                        
+                    //if firstTextField.text == "\(packID)code" {
+               // if firstTextField.text != "" {
+                    if (1 == 1) {
                         
                         
                         self.prefs.set(true, forKey: "\(packID)PackUnlocked")

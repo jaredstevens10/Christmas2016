@@ -114,9 +114,9 @@ class SgButton: SKSpriteNode {
             if image == nil {
                 return nil
             }
-            let img = UIImage(data:  UIImageJPEGRepresentation(image!, 1.0)! )
+            let img = UIImage(data:  image!.jpegData(compressionQuality: 1.0)! )
             let imageRef = img!.cgImage?.copy(maskingColorComponents: colorMasking);
-            return UIImage(cgImage: imageRef!, scale: image!.scale, orientation: UIImageOrientation.up)
+            return UIImage(cgImage: imageRef!, scale: image!.scale, orientation: UIImage.Orientation.up)
         }
         
         
@@ -128,10 +128,10 @@ class SgButton: SKSpriteNode {
             if string != nil {
                 let color = stringColor == nil ? UIColor.black : stringColor!
                 textAttributes = [
-                    NSForegroundColorAttributeName: color,
-                    NSFontAttributeName: getFont()
+                    convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): color,
+                    convertFromNSAttributedStringKey(NSAttributedString.Key.font): getFont()
                 ]
-                stringSz = string!.size(attributes: textAttributes)
+                stringSz = string!.size(withAttributes: convertToOptionalNSAttributedStringKeyDictionary(textAttributes))
             }
             
             
@@ -198,7 +198,7 @@ class SgButton: SKSpriteNode {
             }
             
             let rect = sz==stringSz! ?  CGRect(x: 0, y: 0, width: sz.width, height: sz.height ) : CGRect(x: (sz.width - stringSz!.width) * 0.5, y: (sz.height - stringSz!.height) * 0.5, width: stringSz!.width, height: stringSz!.height)
-            (string as NSString).draw(in: rect, withAttributes: textAttributes)
+            (string as NSString).draw(in: rect, withAttributes: convertToOptionalNSAttributedStringKeyDictionary(textAttributes))
             
             //Create the image from the context
             let image = UIGraphicsGetImageFromCurrentImageContext();
@@ -455,4 +455,15 @@ class SgButton: SKSpriteNode {
         }
     }
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }

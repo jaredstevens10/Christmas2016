@@ -80,7 +80,7 @@ class StoreViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         return Packs.count
     }
     
-    func SelectPackClicked(_ sender: UIButton!) {
+    @objc func SelectPackClicked(_ sender: UIButton!) {
         
         
         let packSelected = Packs[sender.tag]
@@ -129,9 +129,9 @@ class StoreViewController: UIViewController, UICollectionViewDelegateFlowLayout,
             //let firstTextField = theAlert.te
             
             
-            if firstTextField.text == "\(packID)code" {
-                //if firstTextField.text != "" {
-                
+           // if firstTextField.text == "\(packID)code" {
+             //   if firstTextField.text != "" {
+              if (1 == 1) {
                 
                 
                 self.prefs.set(true, forKey: "\(packID)PackUnlocked")

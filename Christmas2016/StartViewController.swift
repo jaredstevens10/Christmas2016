@@ -182,7 +182,7 @@ class StartViewController: UIViewController {
         pulse.duration = 2
         pulse.fromValue = 0.5
         pulse.toValue = 0.6
-        pulse.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        pulse.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         pulse.autoreverses = true
         pulse.repeatCount = FLT_MAX
         
@@ -450,7 +450,7 @@ class StartViewController: UIViewController {
     }
     
     
-    func ToggleMusic(_ notification:Notification) {
+    @objc func ToggleMusic(_ notification:Notification) {
         
 
         
